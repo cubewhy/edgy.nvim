@@ -96,6 +96,10 @@ function M:fix_winhl()
   vim.api.nvim_set_option_value("winhighlight", newv, { scope = "local", win = self.win })
 end
 
+function M:native_window()
+  return self.win
+end
+
 function M:__tostring()
   return "Edgy.Window(" .. (self:is_pinned() and "pinned:" or "") .. self.win .. ")"
 end
